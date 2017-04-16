@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!--<title>Hello TweetDeck!</title>-->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div id="topMenu">
+    <p style="margin: auto; width: inherit; text-align: center; color: white">Drag me.</p>
+    <div id="title-bar-btns">
+      <button id="min-btn">-</button>
+      <button id="max-btn">+</button>
+      <button id="close-btn">x</button>
+    </div>
+  </div>
+  <div id="content">
+    <webview id="extSite" src="https://tweetdeck.twitter.com/">
+    </webview>
+  </div>
+</body>
+
+<script>
+  // You can also require other files to run in this process
+  require('./renderer.js')
+
+</script>
+
+</html>
