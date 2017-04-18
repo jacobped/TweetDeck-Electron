@@ -6,6 +6,7 @@ const BrowserWindow = electron.BrowserWindow
 
 const path = require('path')
 const url = require('url')
+// const open = require("open");
 
 // Setting default app settings
 app.setName("TweetDeck App");
@@ -14,21 +15,21 @@ app.setName("TweetDeck App");
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-const isAlreadyRunning = app.makeSingleInstance(() => {
-	if (mainWindow) {
-		if (mainWindow.isMinimized()) {
-			mainWindow.restore();
-		}
+// const isAlreadyRunning = app.makeSingleInstance(() => {
+// 	if (mainWindow) {
+// 		if (mainWindow.isMinimized()) {
+// 			mainWindow.restore();
+// 		}
 
-		mainWindow.show();
-	}
-});
+// 		mainWindow.show();
+// 	}
+// });
 
-if (isAlreadyRunning) {
-	app.quit();
-}
+// if (isAlreadyRunning) {
+// 	app.quit();
+// }
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     title: app.getName(),
@@ -58,6 +59,13 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+  // let webContents = mainWindow.webContents
+
+  // webContents.on('new-window', function (event, url) {
+  //   event.preventDefault();
+  //   open(url);
+  // });
 }
 
 // This method will be called when Electron has finished
